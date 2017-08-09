@@ -5,8 +5,7 @@ public class IntStack {
     //Encapsulation - Using Private access modifiers
     private int[] stack; //array declaration
     private int top;
-    private int maxSize;
-    private int length;
+    private final int maxSize; //Cannot be changed for that object
 
     //Default constructor
     public IntStack() {
@@ -29,7 +28,7 @@ public class IntStack {
             stack[top] = item;
             return true;
         } else {
-            System.out.println("ERROR! Cannot add "+item);
+            System.out.println("ERROR! FULL STACK!! Cannot add " + item);
         }
         return true;
     }
@@ -44,7 +43,7 @@ public class IntStack {
             return stack[top--];
         }
     }
-//If stack is full
+    //If stack is full
     public boolean isFull() {
         if (top == stack.length - 1) {
             return true;
@@ -52,14 +51,15 @@ public class IntStack {
             return false;
         }
     }
-  
-    public void printStack(){
+
+    public void printStack() {
         //System.out.println("length is "+ stack.length); //Debugging
-        for (int list=0; list<= top; list++)
-            System.out.print(stack[list]+ " ");
+        for (int list = 0; list <= top; list++) {
+            System.out.print(stack[list] + " ");
+        }
     }
-    
-//If stack is empty method
+
+    //If stack is empty method
     public boolean isEmpty() {
         if (top == -1) {
             return true;
@@ -67,12 +67,13 @@ public class IntStack {
             return false;
         }
     }
-    
-    public int peek(){
-        if(!isEmpty()){
+
+    //Returns last / top item
+    public int peek() {
+        if (!isEmpty()) {
             return stack[top];
-        }
-        else 
+        } else {
             return -1;
+        }
     }
 }
