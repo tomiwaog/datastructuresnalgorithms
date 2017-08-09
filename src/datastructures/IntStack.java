@@ -59,7 +59,7 @@ public class IntStack {
         }
     }
 
-    //If stack is empty method
+    //If stack is empty method - Boolean type
     public boolean isEmpty() {
         if (top == -1) {
             return true;
