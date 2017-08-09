@@ -2,7 +2,7 @@ package datastructures;
 
 public class IntStack {
 
-    //Private access modifiers- form of encapsulation
+    //Encapsulation - Using Private access modifiers
     private int[] stack; //array declaration
     private int top;
     private int maxSize;
@@ -15,8 +15,8 @@ public class IntStack {
         stack = new int[3];
     }
 
-    //parameterised constructor
-    public IntStack(int size) {
+    //Polymorphism - Constructor Overload
+    public IntStack(int size) {//parameterised constructor
         maxSize = size;
         top = -1;
         stack = new int[maxSize];
@@ -52,7 +52,6 @@ public class IntStack {
             return false;
         }
     }
-   
   
     public void printStack(){
         //System.out.println("length is "+ stack.length); //Debugging
