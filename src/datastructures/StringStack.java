@@ -1,28 +1,30 @@
+
 package datastructures;
 
-public class IntStack implements InterfaceStack{
-    protected int[] stack; //array declaration
+public class StringStack{
+
+    protected String[] stack; //array declaration
 
     //Encapsulation - Using Private access modifiers
     protected int top;
     protected int maxSize; //Cannot be changed for that object    
     //removing item from stack - Last in first Out(LIFO)
-    public int pop() {
+    public String pop() {
         if (isEmpty()) {
             System.out.println("ERROR! Cant pop empty Stack");
-            return -1;
+            return "";
         } else {
-            stack[top] = 0;
             return stack[top--];
         }
     }
 
     //Returns last/top item
-    public int peek() {
+
+    public String peek() {
         if (!isEmpty()) {
             return stack[top];
         } else {
-            return -1;
+            return "";
         }
     }
         
@@ -34,18 +36,17 @@ public class IntStack implements InterfaceStack{
     }
         
     //Default constructor
-    public IntStack() {
+    public StringStack() {
         maxSize = 10;
         top = -1;
-        stack = new int[10];
+        stack = new String[10];
     }
 
     //Polymorphism - Constructor Overload
-    public IntStack(int size) {//parameterised constructor
+    public StringStack(int size) {//parameterised constructor
         maxSize = size;
         top = -1;
-        stack = new int[maxSize];
-        passIntArray(stack);
+        stack = new String[maxSize];
     }
     
         //If stack is empty method - Boolean type
@@ -57,9 +58,6 @@ public class IntStack implements InterfaceStack{
         }
     }
     
-    public void passIntArray(int stack[]){
-        this.stack = stack;
-    }
     //If stack is full
     public boolean isFull() {
         if (top == stack.length - 1) {
@@ -70,7 +68,7 @@ public class IntStack implements InterfaceStack{
     }
     
     //boolean method pusing item into stack array
-    public boolean push(int item) {
+    public boolean push(String item) {
         if (!isFull()) {
             top++;
             stack[top] = item;
@@ -80,4 +78,5 @@ public class IntStack implements InterfaceStack{
             return false;
         }
     }
+    
 }
