@@ -45,20 +45,12 @@ public class ArrListStackInt {
             
     //If stack is empty method - Boolean type
     public boolean isEmpty() {
-        if (top == -1) {
-            return true;
-        } else {
-            return false;
-        }
+        return top == -1;
     }
 
     //If stack is full
     public boolean isFull() {
-        if (top == maxSize-1) {
-            return true;
-        } else {
-            return false;
-        }
+        return top == maxSize-1;
     }
     
     //boolean method pusing item into stack array

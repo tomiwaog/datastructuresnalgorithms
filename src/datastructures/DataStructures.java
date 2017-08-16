@@ -4,7 +4,7 @@ public class DataStructures {
 
     public static void main(String[] args) {
         //Instack Object instantiation
-        ArrListStackStr mystack = new ArrListStackStr(4);
+        /*ArrListStackStr mystack = new ArrListStackStr(4);
         mystack.push("Tomiwa");
         mystack.push("Titi");
         mystack.push("Bola");
@@ -15,7 +15,7 @@ public class DataStructures {
         System.out.println(mystack.peek());
         System.out.print("\n--- Running Remove\n ---");
         System.out.println(mystack.pop());
-        
+        */
         /*//Testing Person Stack
         PersonStack newPStack = new PersonStack(2); //New Stack Bucket
         Person person1 = new Person("Tomiwa", 28);
@@ -29,6 +29,22 @@ public class DataStructures {
         //newPStack.pop();
         newPStack.printStack();
         */
+        IntQueueArr myint = new IntQueueArr(2);  
+        myint.enqueue(20);
+        myint.enqueue(30);
+        myint.enqueue(40);
+        System.out.println("After 40: ");
+        System.out.println("front is "+myint.front());
+        System.out.println("rear is "+myint.rear());
+        System.out.print("Printing Integers: ");
+        myint.printQueue();
+        myint.dequeue();
+        myint.dequeue();
+        System.out.println(myint.isEmpty());
+        System.out.println(myint.isFull());
+        //myint.enqueue(40);
+        
+        
     }
 
 }
