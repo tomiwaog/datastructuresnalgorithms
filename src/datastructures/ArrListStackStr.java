@@ -20,7 +20,7 @@ public class ArrListStackStr {
     public String pop() {
         if (isEmpty()) {
             System.out.println("ERROR! Cant pop empty Stack");
-            return "ERROR! Cant pop empty Stack";
+            return "ERROR! Cant pop from an empty Stack";
         } else {
             return stack.remove(top--);
         }
