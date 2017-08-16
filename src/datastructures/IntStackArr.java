@@ -1,6 +1,6 @@
 package datastructures;
 
-public class IntStack implements InterfaceStack{
+public class IntStackArr implements InterfaceStack{
     protected int[] stack; //array declaration
 
     //Encapsulation - Using Private access modifiers
@@ -34,18 +34,17 @@ public class IntStack implements InterfaceStack{
     }
         
     //Default constructor
-    public IntStack() {
+    public IntStackArr() {
         maxSize = 10;
         top = -1;
         stack = new int[10];
     }
 
     //Polymorphism - Constructor Overload
-    public IntStack(int size) {//parameterised constructor
+    public IntStackArr(int size) {//parameterised constructor
         maxSize = size;
         top = -1;
         stack = new int[maxSize];
-        passIntArray(stack);
     }
     
         //If stack is empty method - Boolean type
@@ -57,9 +56,6 @@ public class IntStack implements InterfaceStack{
         }
     }
     
-    public void passIntArray(int stack[]){
-        this.stack = stack;
-    }
     //If stack is full
     public boolean isFull() {
         if (top == stack.length - 1) {

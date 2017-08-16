@@ -1,55 +1,49 @@
-
 package datastructures;
 
-public class StringStack{
+import java.util.ArrayList;
 
-    protected String[] stack; //array declaration
+public class ArrListStackInt {
+    private ArrayList<Integer> stack; //array declaration
+    private int maxSize;
 
     //Encapsulation - Using Private access modifiers
-    protected int top;
-    protected int maxSize; //Cannot be changed for that object    
+    protected int top; 
+    
+    //Default constructor
+    public ArrListStackInt(int maxSize) {
+        this.maxSize = maxSize;
+        top = -1;
+        stack = new ArrayList<>();
+    }
+   
     //removing item from stack - Last in first Out(LIFO)
-    public String pop() {
+    public int pop() {
         if (isEmpty()) {
             System.out.println("ERROR! Cant pop empty Stack");
-            return "";
+            return -1;
         } else {
-            return stack[top--];
+            return stack.remove(top--);
         }
     }
 
     //Returns last/top item
-
-    public String peek() {
+    public int peek() {
         if (!isEmpty()) {
-            return stack[top];
+            return (stack.get(top));
         } else {
-            return "";
+            System.out.println("Empty Stack");
+            return -1;
         }
     }
         
     public void printStack() {
         //System.out.println("length is "+ stack.length); //Debugging
-        for (int list = 0; list <= top; list++) {
-            System.out.print(stack[list] + " ");
+        for (int x: stack) {
+            System.out.print(x);
         }
     }
-        
-    //Default constructor
-    public StringStack() {
-        maxSize = 10;
-        top = -1;
-        stack = new String[10];
-    }
-
-    //Polymorphism - Constructor Overload
-    public StringStack(int size) {//parameterised constructor
-        maxSize = size;
-        top = -1;
-        stack = new String[maxSize];
-    }
-    
-        //If stack is empty method - Boolean type
+            
+    //If stack is empty method - Boolean type
     public boolean isEmpty() {
         if (top == -1) {
             return true;
@@ -57,10 +51,10 @@ public class StringStack{
             return false;
         }
     }
-    
+
     //If stack is full
     public boolean isFull() {
-        if (top == stack.length - 1) {
+        if (top == maxSize-1) {
             return true;
         } else {
             return false;
@@ -68,15 +62,14 @@ public class StringStack{
     }
     
     //boolean method pusing item into stack array
-    public boolean push(String item) {
+    public boolean push(int item) {
         if (!isFull()) {
             top++;
-            stack[top] = item;
+            stack.add(item);
             return true;
         } else {
             System.out.println("ERROR! FULL STACK!! Cannot add " + item);
             return false;
         }
     }
-    
 }
