@@ -1,6 +1,6 @@
 package datastructures;
 
-public class PersonStackArr {
+public class PersonObjStackArr {
 
     //Encapsulation - Using Private access modifiers
     private Person[] stack; //array declaration
@@ -8,14 +8,14 @@ public class PersonStackArr {
     private final int maxSize; //Cannot be changed for that object
 
     //Default constructor
-    public PersonStackArr() {
+    public PersonObjStackArr() {
         maxSize = 10;
         top = -1;
         stack = new Person[maxSize];
     }
 
     //Polymorphism - Constructor Overload
-    public PersonStackArr(int size) {//parameterised constructor
+    public PersonObjStackArr(int size) {//parameterised constructor
         maxSize = size;
         top = -1;
         stack = new Person[maxSize];
