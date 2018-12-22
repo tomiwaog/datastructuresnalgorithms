@@ -12,7 +12,7 @@ public class QuickFindUnionFind {
 		}
 	}
 
-	static ArrayList<Integer> checked = new ArrayList<Integer>();
+	ArrayList<Integer> checked = new ArrayList<Integer>();
 
 	boolean isConnected(int a, int b) {
 		System.out.println(a + " and " + b + " CONNECTED?: "
