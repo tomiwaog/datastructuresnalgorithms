@@ -3,7 +3,7 @@ package algorithms;
 public class TestAlgo {
 public static void main(String[] args) {
 	//QuickFind obj = new QuickFind(10);
-	QuickUnion obj = new QuickUnion(10);
+	QuickUnionWeighted obj = new QuickUnionWeighted(10);
 	obj.printer();
 	System.out.println("- - - - - - - - - -");
 	System.out.println();
@@ -19,6 +19,8 @@ public static void main(String[] args) {
 	obj.union(6,1);obj.printer();
 	obj.union(7,3);obj.printer();
 	
-	System.out.println("Component count is " + obj.count());	
+	System.out.println("Component count is " + obj.count());
+	obj.printSteps();
+	System.out.println("Size check:"+obj.sizeOf(6));
 }
 }
