@@ -14,9 +14,9 @@ public class QuickUnionWeighted {
 		}
 	}
 
-	boolean isConnected(int a, int b) { // Order of 2N Array Access
-		int nodea = getRoot(a);
-		int nodeb = getRoot(b);
+	boolean isConnected(int a, int b) { // Order of 2(logN) Array Access
+		int nodea = getRoot(a); //logN
+		int nodeb = getRoot(b); //logN
 		System.out
 				.println(a + " and " + b + " CONNECTED?: " + (nodea == nodeb));
 		return nodea == nodeb;

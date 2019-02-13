@@ -1,5 +1,6 @@
 package algorithms;
 
+
 public class TestAlgo {
 public static void main(String[] args) {
 	//QuickFind obj = new QuickFind(10);
