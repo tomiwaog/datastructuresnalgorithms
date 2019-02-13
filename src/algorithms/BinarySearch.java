@@ -2,9 +2,6 @@ package algorithms;
 
 import java.util.Arrays;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 public class BinarySearch {
 	static int myarr[] = new int[] { 4, 5, 2, 1, 19, 20, 7, 23 };
 
@@ -28,19 +25,5 @@ public class BinarySearch {
 				return mid;
 		}
 		return -1;
-	}
-
-	public static void main(String[] args) {
-		//indexOf(myarr, 23);
-	}
-	
-	@Test
-	public void TestInvalidItem(){
-		Assert.assertEquals(-1, indexOf(myarr, 5003));
-	}
-	
-	@Test
-	public void TestArrayItem(){
-		Assert.assertEquals(7, indexOf(myarr, 23));
 	}
 }

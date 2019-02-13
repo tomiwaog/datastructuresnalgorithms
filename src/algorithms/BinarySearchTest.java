@@ -1,40 +1,37 @@
 package algorithms;
-
-import java.util.Arrays;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class BinarySearchTest {
-	static int myarr[] = new int[] { 4, 5, 2, 1, 19, 20, 7, 23 };
-	static int newarr[] = new int[] { 1, 2, 3, 4, 5 };
-
-	static int indexOf(int[] x, int key) {
-		Arrays.sort(x);
-		int lo = 0, hi = x.length - 1;
-		while (lo <= hi) {
-			int mid = lo + (hi - lo) / 2;
-			if (x[mid] < key)
-				lo = mid + 1;
-			else if (x[mid] > key)
-				hi = mid - 1;
-			else
-				return mid;
-		}
-		return -1;
+	private BinarySearch myBSearch;
+	
+	@Before
+	public void setUp(){
+		//Required for instance methods, null assigned vars can still call static methods
+		myBSearch = new BinarySearch(); //Initializer
+		System.out.println("Set up ini");
 	}
-
-	public static void main(String[] args) {
-		System.out.println(indexOf(myarr, 23)==7);
+	
+	//Helper methods
+	private int[] arr(int... arr){
+		return arr;
 	}
 	
 	@Test
-	public void BinarySearchTestFunc() {
-		Assert.assertEquals(1, indexOf(myarr, 2));
+	public void TestListOfNums() {
+		Assert.assertEquals(1, myBSearch.indexOf(arr( 4, 5, 2, 1, 19, 20, 7, 23 ), 2));
 	}
-
+	
 	@Test
-	public void TestArrayInArraySortClass() {
-		Assert.assertEquals("[5, 4, 3, 2, 1]",
-				Arrays.toString(ArraySorts.reverseArr(newarr)));
+	public void TestInvalidkey(){
+		int[] myarr= new int[] { 4, 5, 2, 1, 19, 20, 7, 23 };
+		Assert.assertEquals(-1, myBSearch.indexOf(myarr, 5003));
+	}
+	
+	@Test
+	public void TestDecreasingNum(){
+		int[] myarr= arr(20,19,18,17,16);
+		Assert.assertEquals(myarr.length-1, myBSearch.indexOf(myarr, 20));
 	}
 }
