@@ -3,10 +3,9 @@ package problems;
 public class CheckAnagramStrings {
 
     static boolean isAnagram(String a, String b) {
-        // Complete the function
     	/*
     	 * Compares count of each character in a string with that of another
-    	 * If both Strings have same amount of each character i.e.{a | a E (Aa-Zz 0-9) where a = b}. |a|=|b| 
+    	 * If both Strings have same amount of each character i.e. length(A)=length(B) and A is a subset of A and vice-versa
     	 */
         if(a.length()==b.length()){
             char[]aa = a.toUpperCase().toCharArray();
