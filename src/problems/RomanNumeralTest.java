@@ -31,14 +31,14 @@ public class RomanNumeralTest {
 	}
 	
 	@Test
-	public void testDoubleSystem(){
+	public void testMultipleSymbols(){
 		Assert.assertEquals(3, roman.convert("III"));
 		Assert.assertEquals(6, roman.convert("VI"));
 		Assert.assertEquals(16, roman.convert("XVI"));
 	}
 	
 	@Test
-	public void testSymbolOrder(){
+	public void testInverseSymbolOrder(){
 		Assert.assertEquals(4, roman.convert("IV"));
 		Assert.assertEquals(9, roman.convert("IX"));
 	}
